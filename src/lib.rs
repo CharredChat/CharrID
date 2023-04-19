@@ -39,6 +39,7 @@ impl CharredProcess {
     }
 }
 
+#[derive(Copy, Clone)]
 pub struct CharrID {
     timestamp: u48,
     process: u8,
