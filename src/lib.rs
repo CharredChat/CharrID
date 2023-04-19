@@ -4,6 +4,7 @@ use std::{
 };
 use ux::u48;
 
+#[derive(Copy, Clone)]
 pub struct CharredProcess {
     pub process_id: u8,
     last_time: SystemTime,
