@@ -1,6 +1,7 @@
 package CharrID
 
 import (
+	"errors"
 	"time"
 )
 
@@ -18,8 +19,12 @@ type CharrID struct {
 	Incr      uint8
 }
 
-func New() CharrID {
-	return CharrID{uint64(time.Now().UnixMilli()), 0, 0}
+func New(proc uint8, incr uint8) (CharrID, error) {
+	var time = uint64(time.Now().UnixMilli())
+	if time >= 1<<LenTime {
+		return CharrID{}, errors.New("Hello future man! unfortunately, this software is not programmed to handle the current date. Sorry.")
+	}
+	return CharrID{time, proc, incr}, nil
 }
 
 func (id *CharrID) AsUint64() uint64 {
