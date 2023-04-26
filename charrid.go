@@ -18,6 +18,13 @@ type CharrID struct {
 	Incr      uint8
 }
 
+func (id *CharrID) as_u64() uint64 {
+	return uint64(id.Timestamp)<<(LenProc+LenIncr) |
+		uint64(id.Proc)<<LenIncr |
+		uint64(id.Incr)
+}
+
 func main() {
-	fmt.Println("Hello, World! %s", CharrID{18446744073709551615, 64, 40})
+	var test = CharrID{68624, 23, 96}
+	fmt.Printf("Hello, World! %64b", test.as_u64())
 }
