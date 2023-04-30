@@ -14,9 +14,9 @@ const (
 
 // Actual struct for IDs
 type CharrID struct {
-	Timestamp uint64
-	Proc      uint8
-	Incr      uint8
+	timestamp uint64
+	proc      uint8
+	incr      uint8
 }
 
 func New(proc uint8, incr uint8) (CharrID, error) {
@@ -28,7 +28,11 @@ func New(proc uint8, incr uint8) (CharrID, error) {
 }
 
 func (id *CharrID) AsUint64() uint64 {
-	return uint64(id.Timestamp)<<(LenProc+LenIncr) |
-		uint64(id.Proc)<<LenIncr |
-		uint64(id.Incr)
+	return uint64(id.timestamp)<<(LenProc+LenIncr) |
+		uint64(id.proc)<<LenIncr |
+		uint64(id.incr)
+}
+
+func (id *CharrID) GetTimestamp() uint64 {
+	return id.timestamp
 }
