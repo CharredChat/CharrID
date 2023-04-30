@@ -1,3 +1,3 @@
-module github.com/CharredChat/charrid
+module github.com/CharredChat/CharrID
 
 go 1.20

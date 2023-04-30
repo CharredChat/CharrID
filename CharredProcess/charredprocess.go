@@ -3,7 +3,7 @@ package CharredProcess
 import (
 	"time"
 
-	"github.com/CharredChat/charrid/CharrID"
+	"github.com/CharredChat/CharrID/CharrID"
 )
 
 type CharredProcess struct {

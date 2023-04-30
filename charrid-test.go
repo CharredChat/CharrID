@@ -5,7 +5,7 @@ import (
 	"log"
 	"time"
 
-	"github.com/CharredChat/charrid/CharredProcess"
+	"github.com/CharredChat/CharrID/CharredProcess"
 )
 
 func main() {
